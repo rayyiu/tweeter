@@ -1,15 +1,25 @@
 .navbar {
+    overflow: hidden;
     height: 120px;
-    width: 100vw;
     padding: 1.5em;
     background-color: #4056A1;
     color: #FFFFFF;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
 }
 
 .navbar span {
     font-family: 'Bungee', cursive;
 }
 
+.main {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+  }
+  
+.navbar p {
+    display: inline;
+  }
 /* .image {
     width: 50vw;
     background-color: magenta;

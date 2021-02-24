@@ -20,6 +20,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -27,7 +28,7 @@
     <nav class="navbar">
       <span>Tweeter</span>
     </nav>
-    <header>
+    <header class="taskbar-header">
       <div class="avatar"> 
           <img src="/images/profile-hex.png"> 
       </div>
@@ -48,10 +49,25 @@
           <textarea name="text" id="tweet-text"></textarea>
           <div class="lower-form">
             <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <output name="counter" id="tweet-counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section> 
+      <section class="old-tweet">
+        <article> 
+          <header>
+            <img src="/images/profile-hex.png" alt="this is your avatar!">
+            <h3>Name</h1>
+          </header>
+          <footer>
+
+
+          </footer>
+        </article>
+
+
+      </section>
+      
       <!-- <p>Hodor. Hodor hodor, hodor. Hodor hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor; hodor hodor hodor. Hodor. Hodor hodor; hodor hodor - hodor, hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor hodor hodor; hodor hodor; hodor hodor hodor! Hodor hodor HODOR! Hodor hodor... Hodor hodor hodor...
       </p>  -->
     </main>
