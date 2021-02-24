@@ -1,0 +1,22 @@
+.navbar {
+    height: 120px;
+    width: 100vw;
+    padding: 1.5em;
+    background-color: #4056A1;
+    color: #FFFFFF;
+}
+
+.navbar span {
+    font-family: 'Bungee', cursive;
+}
+
+/* .image {
+    width: 50vw;
+    background-color: magenta;
+    padding: 100px;
+    box-sizing: content-box;
+    border: 10px solid mediumorchid;
+    border-radius: 50%;
+    margin: 100px;
+}
+ */
