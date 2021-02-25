@@ -43,6 +43,8 @@
     Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class="hide" id="length-error">Too long. No good, no good.</div>
+        <div class="hide" id="content-error">Please input some characters y'all</div>
         <h2>Compose Tweet</h2>
         <label for="tweet-text">What are you humming about?</label>
         <form class="form-inline" action="/tweets" method="POST">

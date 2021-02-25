@@ -41,6 +41,25 @@ main {
   align-items: center;
 }
 
+.hide {
+  display: none;
+}
+
+#content-error {
+  border: 1px solid red;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+#length-error {
+  border: 1px solid red;
+  color: #D8000C;
+  background-color: #FFD2D2;
+  padding: 1rem;
+  margin: 1rem;
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
