@@ -10,12 +10,10 @@ https://www.transparenttextures.com/ */
 
 .taskbar-header {
     height: 400px;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #d98900;
     background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
-    margin-top: 120px;
   }

@@ -1,9 +1,7 @@
 .container {
     display: flex;
     align-items: center;
-    flex-flow: row;
     flex-direction: column;
-    flex: 3;
 }
 
 .container form button {
@@ -16,7 +14,7 @@
 .new-tweet {
     display: flex;
     flex-direction: column;
-    flex: 3;
+    width:100%;
     padding: 1em;
     /* padding: 0 10em 10em 10em */
 }
@@ -31,19 +29,16 @@
 
 .lower-form {
     margin: 1em 0 0 0;
-    border-top: solid;
-    padding: 1em;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-family: 'Bungee', sans-serif;
-
+    width: 100%;
 }
 
 
 textarea {
     display: flex;
     flex-direction: column;
-    flex: 3;
     margin: 1em 0 0 0;
 }
 

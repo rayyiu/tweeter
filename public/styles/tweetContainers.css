@@ -63,8 +63,19 @@ figcaption {
       padding: 0px;
   }
 
+  .tweet-footer {
+      border-top: 3px solid #000;
+  }
   .emoji-footers {
       display: flex;
       flex-direction: row;
       margin-top: 2rem
   }
+
+  .emoji-footers a:link, .emoji-footers a:visited, .emoji-footers a:active {
+      color: blue;
+    }
+
+    .emoji-footers a:hover {
+        color: purple;
+    }

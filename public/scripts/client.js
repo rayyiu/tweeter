@@ -30,17 +30,28 @@ const escape = function (str) {
     return div.innerHTML;
 }
 
-
+// <h3 class="tweet-text">${escape(tweet.content.text)}</h3>
 const createTweetElement = function (tweet) {
-    let $tweet = `<article> 
-    <header>
-      <img class="tweetAvatar"src="${tweet.user.avatars}">
-      <h3>${tweet.user.name}</h3>
-      <h3>${tweet.user.handle}</h3>
+    let $tweet = `<article class="tweet-article"> 
+    <header class="tweet-main">
+    <figure class="tweet-avatar-container">
+      <img class="tweetAvatar" src="${tweet.user.avatars}" alt="this is your avatar">
+     <figcaption> <a class="user-name"> ${tweet.user.name} </a> </figcaption>
+    </figure>
+      <a class="user-handle"> ${tweet.user.handle}</a>
     </header>
     <p>${escape(tweet.content.text)}</p>
-    <footer>
-    <a>${tweet.created_at}</a>
+    <footer class="tweet-footer">
+</span>
+    <div class="tweet-details">
+      <div class="tweet-age">
+        <h6>${moment(tweet.created_at).fromNow()}</h6>
+      </div>
+      <div class="emoji-footers">
+      <a href="#"><i class="fa fa-flag"></i></a>
+      <a href="#"><i class="fa fa-retweet"></i></a>
+      <a href="#"><i class="fa fa-heart"></i></a>
+    </div>
     </footer>
   </article>`
     return $tweet;
@@ -69,26 +80,29 @@ $(document).ready(function () {
     // $(function () {
     $("form").on('submit', function (event) {
         event.preventDefault();
-        $("#content-error").addClass("hide")
-        $("#length-error").addClass("hide")
+        // $("#content-error").addClass("hide")
+        // $("#length-error").addClass("hide")
         console.log('Button clicked, performing ajax call...');
         console.log($(".counter").val())
         if ($(".counter").val() == 140) {
-            $("#content-error").toggleClass("hide").slideDown('slow')
+            $("#content-error").slideDown('slow')
             // if ($("#content-error").is(".hide")) $("#content error").slideDown('slow')
         } else if ($(".counter").val() < 0) {
-            $("#length-error").toggleClass("hide")
+            $("#length-error").slideDown('slow')
         } else {
             console.log("serialize", $(this).serialize());
             $.ajax({ url: '/tweets', method: 'POST', data: $(this).serialize() })
                 .then((res) => {
+                    $("#content-error").slideUp('fast');
+                    $("#length-error").slideUp('fast');
+                    $("#tweet-text").val("");
+                    $("#tweet-counter").val(140)
                     console.log(res)
                     return loadTweets();
                 })
         }
     });
-    // .then(function (index) {
-    //     console.log('Success: ', index);
-    // });
-    // });
+    // $("#write-a-new-tweet").on('click', function (event) {
+    //     event.preventDefault();
+    // })
 });
