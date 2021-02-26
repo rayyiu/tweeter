@@ -84,11 +84,14 @@ $(document).ready(function () {
         // $("#length-error").addClass("hide")
         console.log('Button clicked, performing ajax call...');
         console.log($(".counter").val())
+        $("#content-error").slideUp('fast');
+        $("#length-error").slideUp('fast');
         if ($(".counter").val() == 140) {
             $("#content-error").slideDown('slow')
             // if ($("#content-error").is(".hide")) $("#content error").slideDown('slow')
         } else if ($(".counter").val() < 0) {
             $("#length-error").slideDown('slow')
+            $(".counter").toggleClass('red-font')
         } else {
             console.log("serialize", $(this).serialize());
             $.ajax({ url: '/tweets', method: 'POST', data: $(this).serialize() })
