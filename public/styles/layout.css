@@ -22,7 +22,14 @@ body {
   font-size: 24px;
   align-items: center;
   flex-direction: column;
-  padding-top: 115px;
+  /* padding-top: 100px; */
+  padding-bottom: 10%;
+}
+
+.tweet-main {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .avatar {
@@ -32,6 +39,17 @@ body {
 h2 {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+
+#write-a-new-tweet {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-family: 'Bungee';
+  font-size: medium;
+  padding-top: 1em;
+  color: aliceblue;
 }
 
 main {
@@ -40,10 +58,10 @@ main {
   background-color: #f4f1ec;
   align-items: center;
 }
-
+/* 
 .hide {
   display: none;
-}
+} */
 
 #content-error {
   border: 1px solid red;
@@ -51,6 +69,7 @@ main {
   background-color: #FFD2D2;
   padding: 1rem;
   margin: 1rem;
+  display: none;
 }
 
 #length-error {
@@ -59,7 +78,9 @@ main {
   background-color: #FFD2D2;
   padding: 1rem;
   margin: 1rem;
+  display: none;
 }
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

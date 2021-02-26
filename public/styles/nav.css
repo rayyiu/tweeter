@@ -20,6 +20,19 @@
 .navbar p {
     display: inline;
   }
+
+.chevron {
+  color: aliceblue;
+  padding: 0.5em;
+  align-self: flex-end;
+}
+
+.lower-header {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+  
 /* .image {
     width: 50vw;
     background-color: magenta;

@@ -17,8 +17,17 @@
     display: flex;
     flex-direction: column;
     flex: 3;
-    padding: 0 10em 10em 10em
+    padding: 1em;
+    /* padding: 0 10em 10em 10em */
 }
+
+.new-tweet #tweet-text {
+    background-color: #f4f1ec;
+    border-width: 0;
+    border-bottom-width: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
 
 .lower-form {
     margin: 1em 0 0 0;
@@ -39,6 +48,7 @@ textarea {
 }
 
 
-  .red-font {
-    color: red;
-  }
+#humming-about {
+    padding: 1em;
+}
+
