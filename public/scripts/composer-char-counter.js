@@ -1,3 +1,4 @@
+//function controls counter behaviour upon entry of text into tweet-text box
 $(document).ready(function () {
     console.log("#tweet-text")
     // $("tweet-text").on('keyup', )

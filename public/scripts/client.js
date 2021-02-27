@@ -1,36 +1,10 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-// const loadTweets = function (action) {
-//     console.log("loading posts");
-//     $.ajax({ url: "/tweets" })
-//         .then((res) => {
-//             console.log(res)
-//             renderTweets(res);
-//         })
-// }
-
-// const renderTweets = function (tweets) {
-//     $('#tweets-container').empty();
-//     for (let tweet of tweets) {
-//         const $tweet = createTweetElement(tweet);
-//         $('#tweets-container').append($tweet);
-//     }
-//     // loops through tweets
-//     // calls createTweetElement for each tweet
-//     // takes return value and appends it to the tweets container
-// }
-
 const escape = function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
 }
 
-// <h3 class="tweet-text">${escape(tweet.content.text)}</h3>
+// This function creates the body of the app, with all posted tweets taking this format.
 const createTweetElement = function (tweet) {
     let $tweet = `<article class="tweet-article"> 
     <header class="tweet-main">
@@ -58,6 +32,7 @@ const createTweetElement = function (tweet) {
 }
 
 $(document).ready(function () {
+    //renderTweets will be called in loadTweets to display all stored tweets in the app body.
     const renderTweets = function (tweets) {
         $('#tweets-container').empty();
         for (let tweet of tweets) {
@@ -68,6 +43,7 @@ $(document).ready(function () {
         // calls createTweetElement for each tweet
         // takes return value and appends it to the tweets container
     }
+    //Upon an ajax request to /tweets, we render tweets in the main body of the app.
     const loadTweets = function () {
         console.log("loading posts");
         $.ajax({ url: "/tweets" })
@@ -79,19 +55,19 @@ $(document).ready(function () {
     loadTweets()
     // $(function () {
     $("form").on('submit', function (event) {
+        //prevents button from redirecting page
         event.preventDefault();
-        // $("#content-error").addClass("hide")
-        // $("#length-error").addClass("hide")
-        console.log('Button clicked, performing ajax call...');
-        console.log($(".counter").val())
+        //in the event of errors, this slides up the error messages when the submit button is pressed again.
         $("#content-error").slideUp('fast');
         $("#length-error").slideUp('fast');
+        //when the counter is 140 characters when the button is clicked, we slide down an error showing that there is no text in the tweet box.
         if ($(".counter").val() == 140) {
-            $("#content-error").slideDown('slow')
-            // if ($("#content-error").is(".hide")) $("#content error").slideDown('slow')
+            $("#content-error").slideDown('slow');
+            //if the counter is less than 0, we slide down an error that tells the user they are past the limit for text, and set the counter to red.
         } else if ($(".counter").val() < 0) {
-            $("#length-error").slideDown('slow')
-            $(".counter").toggleClass('red-font')
+            $("#length-error").slideDown('slow');
+            $(".counter").toggleClass('red-font');
+            //For a successful button press. Serializes the ajax requests POST; asynchronously returns the loadTweets function with the new tweet content. Slides up any displayed error messages.
         } else {
             console.log("serialize", $(this).serialize());
             $.ajax({ url: '/tweets', method: 'POST', data: $(this).serialize() })
