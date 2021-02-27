@@ -48,7 +48,6 @@ $(document).ready(function () {
     console.log("loading posts");
     $.ajax({ url: "/tweets" })
       .then((res) => {
-        console.log(res)
         renderTweets(res);
       })
   }
@@ -75,8 +74,7 @@ $(document).ready(function () {
           $("#content-error").slideUp('fast');
           $("#length-error").slideUp('fast');
           $("#tweet-text").val("");
-          $("#tweet-counter").val(140)
-          console.log(res)
+          $("#tweet-counter").val(140);
           return loadTweets();
         })
     }
